@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aegis</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="rail">
+        <div class="brand-card">
+          <p class="eyebrow">Local Command Center</p>
+          <h1 id="app-name">Aegis</h1>
+          <p id="tagline" class="tagline">A local personal command center for your Mac.</p>
+          <div class="brand-glow"></div>
+        </div>
+
+        <section class="panel status-panel">
+          <div class="panel-title-row">
+            <h2>Status</h2>
+            <span id="ollama-status" class="pill waiting">Checking</span>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric">
+              <span class="metric-label">Model</span>
+              <select id="model"></select>
+            </article>
+            <article class="metric">
+              <span class="metric-label">Memories</span>
+              <strong id="memory-count">0</strong>
+            </article>
+            <article class="metric">
+              <span class="metric-label">Messages</span>
+              <strong id="message-count">0</strong>
+            </article>
+            <article class="metric">
+              <span class="metric-label">Voice Input</span>
+              <strong id="voice-status">Checking</strong>
+            </article>
+          </div>
+
+          <label class="toggle-card">
+            <input id="speak-replies" type="checkbox">
+            <div>
+              <span class="toggle-title">Voice replies</span>
+              <span class="toggle-copy">Use your Mac's built-in speech for spoken responses.</span>
+            </div>
+          </label>
+        </section>
+
+        <section class="panel quick-panel">
+          <div class="panel-title-row">
+            <h2>Quick Start</h2>
+          </div>
+          <div class="chip-grid">
+            <button class="chip" data-prompt="Build me a focused study session for tonight with breaks included.">Study session</button>
+            <button class="chip" data-prompt="Organize my tasks into now, next, and later.">Task sort</button>
+            <button class="chip" data-prompt="Plan my week in a realistic way based on my saved memories.">Week plan</button>
+            <button class="chip" data-prompt="Turn my ideas into clean notes and action items.">Clean notes</button>
+          </div>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <section class="hero panel">
+          <div>
+            <p class="eyebrow">Private • Free • Local</p>
+            <h2 class="hero-title">Your personal assistant, designed for real life.</h2>
+            <p class="hero-copy">Aegis remembers what matters, keeps your conversations on your Mac, and helps with studying, planning, productivity, and day-to-day organization.</p>
+          </div>
+          <div class="hero-actions">
+            <button id="speak-last" class="ghost">Speak last reply</button>
+            <button id="clear-chat" class="ghost">Clear history</button>
+          </div>
+        </section>
+
+        <section class="main-grid">
+          <section class="panel conversation-panel">
+            <div class="panel-title-row">
+              <div>
+                <h2>Conversation</h2>
+                <p class="panel-copy">Your ongoing thread with Aegis. Reloading the page keeps the history.</p>
+              </div>
+              <div id="response-state" class="subtle-state">Ready</div>
+            </div>
+
+            <div id="chat" class="chat"></div>
+
+            <form id="chat-form" class="composer">
+              <label class="field-label" for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Ask Aegis for a study plan, help organizing tasks, note cleanup, or daily planning..."></textarea>
+              <div class="composer-bar">
+                <span id="draft-status" class="helper-text">Drafts save automatically in this browser.</span>
+                <div class="composer-actions">
+                  <button id="record-button" class="ghost" type="button">Start voice</button>
+                  <span id="message-length" class="counter">0</span>
+                  <button id="send-button" type="submit">Send</button>
+                </div>
+              </div>
+            </form>
+          </section>
+
+          <section class="side-grid">
+            <section class="panel memory-panel">
+              <div class="panel-title-row">
+                <div>
+                  <h2>Memory</h2>
+                  <p class="panel-copy">Save preferences, goals, study notes, and tasks so Aegis understands you better over time.</p>
+                </div>
+                <button id="refresh-memories" class="ghost">Refresh</button>
+              </div>
+
+              <form id="memory-form" class="memory-form">
+                <label class="field-label" for="memory-input">Save a memory</label>
+                <textarea id="memory-input" rows="3" placeholder="Example: I prefer short, practical explanations."></textarea>
+                <div class="memory-form-row">
+                  <select id="memory-category"></select>
+                  <button type="submit">Remember</button>
+                </div>
+              </form>
+
+              <div class="memory-toolbar">
+                <input id="memory-search" type="search" placeholder="Search memories...">
+              </div>
+
+              <div id="memories" class="memories"></div>
+            </section>
+
+            <section class="panel tips-panel">
+              <div class="panel-title-row">
+                <h2>How To Use It Well</h2>
+              </div>
+              <ul class="tips">
+                <li>Keep memories short and specific so they are more useful later.</li>
+                <li>Use the model selector if replies feel too slow on your laptop.</li>
+                <li>Ask Aegis to break big tasks into tiny next steps when you feel stuck.</li>
+                <li>Turn on voice replies if you want the app to feel more assistant-like.</li>
+              </ul>
+            </section>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="/app.js"></script>
+  </body>
+  </html>
