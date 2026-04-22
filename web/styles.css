@@ -99,7 +99,6 @@ body {
 }
 
 h1,
-.hero-title,
 h2 {
   margin: 0;
   font-family: "Iowan Old Style", "Palatino Linotype", serif;
@@ -111,10 +110,8 @@ h1 {
 }
 
 .tagline,
-.hero-copy,
 .panel-copy,
 .helper-text,
-.tips,
 .empty {
   color: var(--muted);
 }
@@ -298,38 +295,9 @@ button.ghost,
   text-align: left;
 }
 
-.hero {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  align-items: center;
-  background:
-    linear-gradient(135deg, rgba(85, 214, 255, 0.09), rgba(38, 185, 166, 0.05)),
-    var(--panel-2);
-  padding-block: 12px;
-  flex: 0 0 auto;
-}
-
-.hero-title {
-  font-size: clamp(30px, 5vw, 46px);
-  max-width: 720px;
-}
-
-.hero-copy {
-  max-width: 760px;
-  margin-top: 10px;
-  line-height: 1.6;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
 .main-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(330px, 0.95fr);
+  grid-template-columns: minmax(0, 1.7fr) minmax(320px, 0.85fr);
   gap: 20px;
   align-items: stretch;
   flex: 1;
@@ -352,6 +320,16 @@ button.ghost,
 .side-grid {
   overflow: auto;
   padding-right: 4px;
+}
+
+.memory-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.action-button {
+  flex: 1;
 }
 
 .chat {
@@ -503,12 +481,6 @@ button.ghost,
   color: var(--muted);
 }
 
-.tips {
-  margin: 0;
-  padding-left: 18px;
-  line-height: 1.7;
-}
-
 .toast {
   position: fixed;
   right: 18px;
@@ -595,7 +567,7 @@ button.ghost,
     align-items: stretch;
   }
 
-  .hero-actions,
+  .memory-actions,
   .composer-actions {
     width: 100%;
     flex-direction: column;

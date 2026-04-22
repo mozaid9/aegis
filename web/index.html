@@ -64,18 +64,6 @@
       </aside>
 
       <main class="workspace">
-        <section class="hero panel">
-          <div>
-            <p class="eyebrow">Private • Free • Local</p>
-            <h2 class="hero-title">Your personal assistant, designed for real life.</h2>
-            <p class="hero-copy">Aegis remembers what matters, keeps your conversations on your Mac, and helps with studying, planning, productivity, and day-to-day organization.</p>
-          </div>
-          <div class="hero-actions">
-            <button id="speak-last" class="ghost">Speak last reply</button>
-            <button id="clear-chat" class="ghost">Clear history</button>
-          </div>
-        </section>
-
         <section class="main-grid">
           <section class="panel conversation-panel">
             <div class="panel-title-row">
@@ -107,14 +95,19 @@
               <div class="panel-title-row">
                 <div>
                   <h2>Memory</h2>
-                  <p class="panel-copy">Save preferences, goals, study notes, and tasks so Aegis understands you better over time.</p>
-                </div>
-                <button id="refresh-memories" class="ghost">Refresh</button>
+                <p class="panel-copy">Save preferences, goals, study notes, and tasks so Aegis understands you better over time.</p>
               </div>
+              <button id="refresh-memories" class="ghost">Refresh</button>
+            </div>
 
-              <form id="memory-form" class="memory-form">
-                <label class="field-label" for="memory-input">Save a memory</label>
-                <textarea id="memory-input" rows="3" placeholder="Example: I prefer short, practical explanations."></textarea>
+            <div class="memory-actions">
+              <button id="speak-last" class="ghost small action-button">Speak last reply</button>
+              <button id="clear-chat" class="ghost small action-button">Clear history</button>
+            </div>
+
+            <form id="memory-form" class="memory-form">
+              <label class="field-label" for="memory-input">Save a memory</label>
+              <textarea id="memory-input" rows="3" placeholder="Example: I prefer short, practical explanations."></textarea>
                 <div class="memory-form-row">
                   <select id="memory-category"></select>
                   <button type="submit">Remember</button>
@@ -126,18 +119,6 @@
               </div>
 
               <div id="memories" class="memories"></div>
-            </section>
-
-            <section class="panel tips-panel">
-              <div class="panel-title-row">
-                <h2>How To Use It Well</h2>
-              </div>
-              <ul class="tips">
-                <li>Keep memories short and specific so they are more useful later.</li>
-                <li>Use the model selector if replies feel too slow on your laptop.</li>
-                <li>Ask Aegis to break big tasks into tiny next steps when you feel stuck.</li>
-                <li>Turn on voice replies if you want the app to feel more assistant-like.</li>
-              </ul>
             </section>
           </section>
         </section>
