@@ -61,6 +61,7 @@ body {
 
 .workspace {
   overflow: hidden;
+  height: calc(100dvh - 44px);
 }
 
 .brand-card,
@@ -306,6 +307,7 @@ button.ghost,
     linear-gradient(135deg, rgba(85, 214, 255, 0.09), rgba(38, 185, 166, 0.05)),
     var(--panel-2);
   padding-block: 12px;
+  flex: 0 0 auto;
 }
 
 .hero-title {
@@ -332,6 +334,7 @@ button.ghost,
   align-items: stretch;
   flex: 1;
   min-height: 0;
+  height: 100%;
 }
 
 .conversation-panel,
@@ -339,6 +342,11 @@ button.ghost,
   display: flex;
   flex-direction: column;
   min-height: 0;
+}
+
+.conversation-panel {
+  height: 100%;
+  overflow: hidden;
 }
 
 .side-grid {
@@ -351,6 +359,7 @@ button.ghost,
   min-height: 0;
   overflow: auto;
   padding-right: 8px;
+  padding-bottom: 12px;
 }
 
 .message {
@@ -388,6 +397,9 @@ button.ghost,
   margin-top: 14px;
   padding-top: 10px;
   border-top: 1px solid rgba(154, 180, 209, 0.08);
+  flex: 0 0 auto;
+  background: linear-gradient(180deg, rgba(9, 17, 26, 0.15), rgba(9, 17, 26, 0.92) 35%);
+  padding-bottom: 2px;
 }
 
 .composer-bar,
@@ -430,7 +442,7 @@ button.ghost,
   gap: 10px;
   margin-top: 14px;
   overflow: auto;
-  max-height: 36vh;
+  flex: 1;
   min-height: 0;
 }
 
@@ -553,6 +565,15 @@ button.ghost,
   .side-grid {
     overflow: visible;
     padding-right: 0;
+  }
+
+  .workspace {
+    height: auto;
+  }
+
+  .main-grid,
+  .conversation-panel {
+    height: auto;
   }
 }
 
