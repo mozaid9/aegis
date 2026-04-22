@@ -290,6 +290,10 @@ button.ghost,
   gap: 10px;
 }
 
+.mobile-quick-panel {
+  display: none;
+}
+
 .chip {
   min-height: 60px;
   text-align: left;
@@ -546,6 +550,17 @@ button.ghost,
   .main-grid,
   .conversation-panel {
     height: auto;
+  }
+
+  .quick-panel {
+    display: none;
+  }
+
+  .mobile-quick-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
   }
 }
 
